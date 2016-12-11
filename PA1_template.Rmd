@@ -47,6 +47,11 @@ The total number of steps taken per day is calculated and histogram of the total
 totalStepsPerDay <- tapply(activityData$steps, activityData$date, sum, na.rm=T)
 hist(totalStepsPerDay, xlab = "sum of steps per day", main = "histogram of steps per day")
 ```
+```{r echo = FALSE , include=FALSE}
+dev.copy(png,'Missingvalues.png')
+hist(totalStepsPerDay, xlab = "sum of steps per day", main = "histogram of steps per day")
+dev.off()
+```
 
 The mean and median of the total number of steps taken per day is 
 
@@ -63,7 +68,11 @@ dap_int <- tapply(activityData$steps, activityData$interval, mean, na.rm=T)
 plot(dap_int ~ unique(activityData$interval), type="l", xlab = "5-min interval")
 dap_int[which.max(dap_int)]
 ```
-
+```{r echo = FALSE , include=FALSE}
+dev.copy(png,'dailyActivity.png')
+plot(dap_int ~ unique(activityData$interval), type="l", xlab = "5-min interval")
+dev.off()
+```
 ##Imputing missing values
 
 Note that there are a number of days/intervals where there are missing values (coded as NA). The presence of missing days may introduce bias into some calculations or summaries of the data.
@@ -101,6 +110,12 @@ hist(totalStepsPerDay2, xlab = "sum of steps per day", main = "histogram of step
 totalStepsPerDay_mean2 <- round(mean(totalStepsPerDay2))
 totalStepsPerDay_median2 <- round(median(totalStepsPerDay2))
 print(paste("The Mean is ",totalStepsPerDay_mean2," and the Median is ",totalStepsPerDay_median2))
+```
+
+```{r echo = FALSE , include=FALSE}
+dev.copy(png,'stepsTakenEachDay.png')
+hist(totalStepsPerDay2, xlab = "sum of steps per day", main = "histogram of steps per day")
+dev.off()
 ```
 
 In order to compare the new values with the “old” values:
@@ -152,4 +167,3 @@ dev.off()
 ```
 
 It can be observed that there is a small difference between the period.
-
