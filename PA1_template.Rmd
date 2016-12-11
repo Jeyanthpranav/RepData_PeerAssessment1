@@ -118,7 +118,11 @@ hist(totalStepsPerDay2, xlab = "sum of steps per day", main = "histogram of step
 dev.off()
 ```
 
+<<<<<<< HEAD
 In order to compare the new values with the "old" values:
+=======
+In order to compare the new values with the “old” values:
+>>>>>>> origin/master
 ```{r}
 df_summary=NULL
 df_summary <- rbind(df_summary, data.frame(mean = c(totalStepsPerDay_mean, totalStepsPerDay_mean2), median = c(totalStepsPerDay_median, totalStepsPerDay_median2)))
@@ -166,4 +170,8 @@ xyplot(avg ~ interval | day, data = df_final,
 dev.off()
 ```
 
+<<<<<<< HEAD
 It can be observed that there is a small difference between the period.
+=======
+It can be observed that there is a small difference between the period.
+>>>>>>> origin/master
